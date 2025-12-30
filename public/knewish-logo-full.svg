@@ -1,0 +1,19 @@
+<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- K Letter -->
+  <g transform="translate(20, 15)">
+    <line x1="10" y1="0" x2="10" y2="50" stroke="#1F3A93" stroke-width="4" stroke-linecap="round"/>
+    <line x1="10" y1="15" x2="35" y2="0" stroke="#1F3A93" stroke-width="4" stroke-linecap="round"/>
+    <line x1="10" y1="25" x2="35" y2="50" stroke="#1F3A93" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Circle 360 -->
+  <circle cx="100" cy="40" r="35" stroke="#B8860B" stroke-width="2" fill="none" opacity="0.6"/>
+  <circle cx="100" cy="40" r="32" stroke="#1F3A93" stroke-width="1.5" fill="none" opacity="0.3"/>
+  
+  <!-- 360 Text -->
+  <text x="100" y="48" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F3A93" text-anchor="middle">360</text>
+  
+  <!-- Company Name -->
+  <text x="140" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A93">KNEWISH</text>
+  <text x="140" y="48" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#B8860B">SERVICES</text>
+</svg>
