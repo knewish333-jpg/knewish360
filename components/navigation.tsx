@@ -14,17 +14,17 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-background/90 backdrop-blur-xl z-50 border-b border-border shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-xl z-50 border-b border-border shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-2">
+        <div className="flex justify-between items-center py-3">
           <a
             href="/"
-            className="flex items-center gap-3 animate-fade-in hover:opacity-80 transition-opacity"
+            className="flex items-center gap-3 animate-fade-in hover:opacity-85 transition-all duration-300"
           >
             <img
               src="/logo.png"
               alt="Knewish360 Logo"
-              className="h-16 w-auto object-contain"
+              className="h-20 w-auto object-contain drop-shadow-lg"
             />
           </a>
 
