@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import knewishLogon from "../public/knewish360-logo.png";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function Navigation() {
             className="flex items-center gap-3 animate-fade-in hover:opacity-80 transition-opacity"
           >
             <img
-              src="/knewish360-logo.png"
+              src={knewishLogon.src}
               alt="Knewish360 Logo"
               className="h-12 w-auto object-contain"
             />
