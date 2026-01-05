@@ -87,7 +87,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-primary hover:text-primary/80 font-medium transition-colors duration-300"
                 >
-                  +92 300 462 7820
+                  +92 332 8283539
                 </a>
               </div>
               <div>
@@ -96,7 +96,7 @@ export default function Footer() {
                   href="tel:+923004627820"
                   className="text-primary hover:text-primary/80 font-medium transition-colors duration-300"
                 >
-                  +92 300 462 7820
+                  +92 332 8283539
                 </a>
               </div>
               <div>

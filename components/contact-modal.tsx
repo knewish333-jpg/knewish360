@@ -1,58 +1,60 @@
-"use client"
+"use client";
 
-import { useState, createContext, useContext, type ReactNode } from "react"
-import { X, MessageCircle, Phone, MapPin, Globe } from "lucide-react"
+import { useState, createContext, useContext, type ReactNode } from "react";
+import { X, MessageCircle, Phone, MapPin, Globe } from "lucide-react";
 
 interface ContactModalContextType {
-  isOpen: boolean
-  openModal: () => void
-  closeModal: () => void
+  isOpen: boolean;
+  openModal: () => void;
+  closeModal: () => void;
 }
 
-const ContactModalContext = createContext<ContactModalContextType | undefined>(undefined)
+const ContactModalContext = createContext<ContactModalContextType | undefined>(
+  undefined
+);
 
 export function ContactModalProvider({ children }: { children: ReactNode }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = () => setIsOpen(true)
-  const closeModal = () => setIsOpen(false)
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
 
   return (
     <ContactModalContext.Provider value={{ isOpen, openModal, closeModal }}>
       {children}
       <ContactModal isOpen={isOpen} onClose={closeModal} />
     </ContactModalContext.Provider>
-  )
+  );
 }
 
 export function useContactModal() {
-  const context = useContext(ContactModalContext)
+  const context = useContext(ContactModalContext);
   if (!context) {
-    throw new Error("useContactModal must be used within ContactModalProvider")
+    throw new Error("useContactModal must be used within ContactModalProvider");
   }
-  return context
+  return context;
 }
 
 interface ContactModalProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 function ContactModal({ isOpen, onClose }: ContactModalProps) {
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   const contactDetails = [
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      value: "+92 300 462 7820",
+      value: "+92 332 8283539",
       link: "https://wa.me/923004627820?text=Hello%20Knewish360%2C%20I%20would%20like%20to%20book%20a%20consultation",
       color: "bg-green-500",
     },
     {
       icon: Phone,
       title: "Phone Call",
-      value: "+92 300 462 7820",
+      value: "+92 332 8283539",
       link: "tel:+923004627820",
       color: "bg-primary",
     },
@@ -69,7 +71,7 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
       value: "Islamabad, Pakistan",
       color: "bg-orange-500",
     },
-  ]
+  ];
 
   return (
     <>
@@ -93,7 +95,9 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 <h2 className="text-4xl sm:text-5xl font-heading font-black text-primary-foreground mb-2">
                   Knewish360
                 </h2>
-                <p className="text-primary-foreground/90 text-lg font-bold">Get In Touch With Us</p>
+                <p className="text-primary-foreground/90 text-lg font-bold">
+                  Get In Touch With Us
+                </p>
               </div>
               <button
                 onClick={onClose}
@@ -107,14 +111,14 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
           {/* Content */}
           <div className="p-8 sm:p-12">
             <p className="text-foreground mb-10 text-lg leading-relaxed font-medium">
-              Contact our expert team at Knewish360. We're available 24/7 to help with your relocation, renovation, and
-              service needs.
+              Contact our expert team at Knewish360. We're available 24/7 to
+              help with your relocation, renovation, and service needs.
             </p>
 
             {/* Contact Options Grid */}
             <div className="grid md:grid-cols-2 gap-6 mb-10">
               {contactDetails.map((detail, index) => {
-                const IconComponent = detail.icon
+                const IconComponent = detail.icon;
                 return (
                   <div
                     key={index}
@@ -125,12 +129,14 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
                         <IconComponent size={24} />
                       </div>
                       <div className="flex-1">
-                        <p className="text-sm font-bold opacity-90 mb-1 uppercase tracking-wide">{detail.title}</p>
+                        <p className="text-sm font-bold opacity-90 mb-1 uppercase tracking-wide">
+                          {detail.title}
+                        </p>
                         <p className="text-lg font-black">{detail.value}</p>
                       </div>
                     </div>
                   </div>
-                )
+                );
               })}
             </div>
 
@@ -152,7 +158,8 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   From home making to shifting, Knewish360 stays with you
                 </span>
                 <br />
-                Your trusted partner for relocation, renovation, and maintenance services.
+                Your trusted partner for relocation, renovation, and maintenance
+                services.
               </p>
             </div>
           </div>
@@ -175,5 +182,5 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
         }
       `}</style>
     </>
-  )
+  );
 }
