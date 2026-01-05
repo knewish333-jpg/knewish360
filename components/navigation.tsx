@@ -1,25 +1,28 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    element?.scrollIntoView({ behavior: "smooth" })
-    setIsMenuOpen(false)
-  }
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: "smooth" });
+    setIsMenuOpen(false);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-background/90 backdrop-blur-xl z-50 border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-5">
-          <a href="/" className="flex items-center gap-3 animate-fade-in hover:opacity-80 transition-opacity">
-            <img 
-              src="/knewish360-logo.png" 
-              alt="Knewish360 Logo" 
+          <a
+            href="/"
+            className="flex items-center gap-3 animate-fade-in hover:opacity-80 transition-opacity"
+          >
+            <img
+              src="/knewish360-logo.png"
+              alt="Knewish360 Logo"
               className="h-12 w-auto object-contain"
             />
           </a>
@@ -50,7 +53,7 @@ export default function Navigation() {
                 >
                   {item.label}
                 </button>
-              ),
+              )
             )}
             <a
               href="https://wa.me/923004627820?text=Hello%20Knewish360%2C%20I%20would%20like%20to%20book%20a%20free%20consultation"
@@ -63,7 +66,10 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="lg:hidden text-foreground p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button
+            className="lg:hidden text-foreground p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -96,7 +102,7 @@ export default function Navigation() {
                   >
                     {item.label}
                   </button>
-                ),
+                )
               )}
               <a
                 href="https://wa.me/923004627820?text=Hello%20Knewish360%2C%20I%20would%20like%20to%20book%20a%20free%20consultation"
@@ -111,5 +117,5 @@ export default function Navigation() {
         )}
       </div>
     </nav>
-  )
+  );
 }

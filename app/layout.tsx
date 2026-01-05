@@ -1,27 +1,27 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Poppins, Space_Grotesk, Manrope } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import { ContactModalProvider } from "@/components/contact-modal"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Poppins, Space_Grotesk, Manrope } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { ContactModalProvider } from "@/components/contact-modal";
+import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-poppins",
-})
+});
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-grotesk",
-})
+});
 
 const manrope = Manrope({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-manrope",
-})
+});
 
 export const metadata: Metadata = {
   title: "Knewish360 - Professional Relocation & Renovation Services",
@@ -39,12 +39,12 @@ export const metadata: Metadata = {
     ],
     apple: "/knewish360-logo.png",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -55,5 +55,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
