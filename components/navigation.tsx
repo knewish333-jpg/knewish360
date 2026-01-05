@@ -17,15 +17,11 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-5">
           <a href="/" className="flex items-center gap-3 animate-fade-in hover:opacity-80 transition-opacity">
-            <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300">
-              <span className="text-primary-foreground font-bold text-2xl font-heading">K</span>
-            </div>
-            <div>
-              <div className="font-bold text-xl text-foreground hidden sm:block font-heading tracking-tight">
-                Knewish<span className="text-primary">360</span>
-              </div>
-              <p className="text-xs text-muted-foreground hidden sm:block font-medium">Premium Services</p>
-            </div>
+            <img 
+              src="/knewish360-logo.png" 
+              alt="Knewish360 Logo" 
+              className="h-12 w-auto object-contain"
+            />
           </a>
 
           <div className="hidden lg:flex items-center gap-10">
