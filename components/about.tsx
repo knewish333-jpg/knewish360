@@ -106,11 +106,8 @@ export default function About() {
               <div
                 key={index}
                 className="bg-muted/50 border border-border rounded-xl p-8 text-center hover:bg-muted hover:border-primary/50 text-green-600 transition-all duration-300"
-                style={{
-                  transitionDelay: isVisible ? `${index * 50}ms` : "0ms",
-                }}
               >
-                <p className="text-4xl font-display text-primary mb-2">
+                <p className="text-4xl font-display text-shadow-green-400 mb-2">
                   {item.stat}
                 </p>
                 <p className="text-muted-foreground text-sm">{item.label}</p>
