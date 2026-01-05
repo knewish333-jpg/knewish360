@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import Link from "next/link";
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
   const handleSmoothScroll = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    element?.scrollIntoView({ behavior: "smooth" })
-  }
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <footer className="bg-secondary text-secondary-foreground">
@@ -23,7 +23,8 @@ export default function Footer() {
               <span className="font-bold text-lg">Knewish360</span>
             </div>
             <p className="text-secondary-foreground/80 leading-relaxed">
-              Transforming spaces with professional relocation, renovation, and maintenance solutions.
+              Transforming spaces with professional relocation, renovation, and
+              maintenance solutions.
             </p>
           </div>
 
@@ -110,16 +111,22 @@ export default function Footer() {
         <div className="border-t border-secondary-foreground/20 py-8">
           {/* Social Links */}
           <div className="flex items-center justify-between flex-col sm:flex-row gap-6">
-            <p className="text-secondary-foreground/80">© 2025 Knewish360. All rights reserved.</p>
+            <p className="text-secondary-foreground/80">
+              © 2025 Knewish360. All rights reserved.
+            </p>
 
             <div className="flex gap-4">
               {[
-                { icon: Facebook, href: "#" },
-                { icon: Twitter, href: "#" },
-                { icon: Instagram, href: "#" },
-                { icon: Linkedin, href: "#" },
+                {
+                  icon: Facebook,
+                  href: "https://www.facebook.com/share/1D3hXWRnc5/",
+                },
+                {
+                  icon: Instagram,
+                  href: "https://www.instagram.com/kne.wish360?igsh=aHF0M3M3YzI2ZDdw",
+                },
               ].map((social, index) => {
-                const IconComponent = social.icon
+                const IconComponent = social.icon;
                 return (
                   <Link
                     key={index}
@@ -131,12 +138,12 @@ export default function Footer() {
                       className="text-primary group-hover:text-white transition-colors duration-300"
                     />
                   </Link>
-                )
+                );
               })}
             </div>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
