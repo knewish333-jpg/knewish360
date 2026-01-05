@@ -31,13 +31,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/knewish360-logo.png",
-      },
-      {
-        url: "/favicon.ico",
+        url: "/logo.png",
       },
     ],
-    apple: "/knewish360-logo.png",
+    apple: "/logo.png",
   },
 };
 

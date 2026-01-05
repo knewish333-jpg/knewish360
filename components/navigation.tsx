@@ -22,7 +22,7 @@ export default function Navigation() {
             className="flex items-center gap-3 animate-fade-in hover:opacity-80 transition-opacity"
           >
             <img
-              src={knewishLogon.src}
+              src="/logo.png"
               alt="Knewish360 Logo"
               className="h-12 w-auto object-contain"
             />
