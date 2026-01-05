@@ -1,76 +1,119 @@
-'use client'
+"use client"
+
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
+import { Check } from "lucide-react"
 
 export default function About() {
-  const stats = [
-    { number: "5000+", label: "Projects Completed" },
-    { number: "98%", label: "Client Satisfaction" },
-    { number: "15+", label: "Years Experience" },
-    { number: "24/7", label: "Customer Support" }
-  ]
-
-  const values = [
-    { title: "Professional Excellence", description: "Highly trained and certified technicians" },
-    { title: "Customer First", description: "Your satisfaction is our top priority" },
-    { title: "Quality Guaranteed", description: "Comprehensive warranties on all services" },
-    { title: "Transparent Pricing", description: "No hidden costs or surprise charges" }
-  ]
+  const { ref, isVisible } = useIntersectionObserver()
 
   return (
-    <section id="about" className="w-full py-20 bg-gradient-to-b from-background to-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main About Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-          <div className="fade-in">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">About Knewish 360</h2>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Knewish 360 is your comprehensive solution provider for all home and business service needs. We specialize in relocation services, solar panel installation, home renovations, electrical services, and AC maintenance—delivering excellence across every service category.
-            </p>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              With over 15 years in the industry, we've built our reputation on quality workmanship, transparent communication, and unwavering customer satisfaction. Our 360° approach means we handle every aspect of your project with meticulous attention to detail.
-            </p>
+    <section
+      ref={ref}
+      id="about"
+      className={`py-20 px-4 sm:px-6 lg:px-8 bg-background transition-all duration-1000 ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div
+          className={`text-center mb-16 transition-all duration-700 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
+        >
+          <h2 className="text-4xl sm:text-5xl font-display text-foreground mb-4">About Knewish360</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            A decade of excellence in transforming spaces and creating lasting impressions
+          </p>
+        </div>
+
+        {/* Content Grid */}
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          {/* Left Content */}
+          <div
+            className={`space-y-6 transition-all duration-700 ${
+              isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
+            }`}
+          >
+            <div>
+              <h3 className="text-2xl font-display text-foreground mb-3">Why Choose Us?</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                With over a decade of experience, Knewish360 has established itself as a trusted partner for
+                comprehensive relocation, renovation, and maintenance services. Our team of skilled professionals is
+                dedicated to delivering excellence in every project.
+              </p>
+            </div>
 
             <div className="space-y-4">
               {[
-                "Licensed and Insured Professionals",
-                "Transparent Pricing & No Hidden Costs",
-                "Comprehensive Warranty on All Services",
-                "Fast Response Times & Emergency Support"
-              ].map((feature, idx) => (
-                <div key={idx} className="flex items-center gap-3 group">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
-                    <span className="w-3 h-3 rounded-full bg-primary"></span>
+                { title: "Expert Team", desc: "Highly trained professionals with years of experience" },
+                { title: "Quality Guaranteed", desc: "We maintain the highest standards in all our services" },
+                { title: "24/7 Support", desc: "Always available to address your concerns and needs" },
+                { title: "Affordable Pricing", desc: "Competitive rates without compromising quality" },
+              ].map((item, index) => (
+                <div key={index} className="flex gap-4">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                      <Check size={16} className="text-primary-foreground" />
+                    </div>
                   </div>
-                  <span className="text-foreground font-medium">{feature}</span>
+                  <div>
+                    <h4 className="font-semibold text-foreground">{item.title}</h4>
+                    <p className="text-muted-foreground text-sm">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 gap-6 fade-in" style={{ animationDelay: '0.2s' }}>
-            {stats.map((stat, idx) => (
+          {/* Right Stats */}
+          <div
+            className={`grid grid-cols-2 gap-6 transition-all duration-700 ${
+              isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
+            }`}
+          >
+            {[
+              { stat: "500+", label: "Happy Clients" },
+              { stat: "1000+", label: "Projects Completed" },
+              { stat: "10+", label: "Years in Business" },
+              { stat: "98%", label: "Success Rate" },
+            ].map((item, index) => (
               <div
-                key={idx}
-                className="bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 rounded-xl p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                key={index}
+                className="bg-muted/50 border border-border rounded-xl p-8 text-center hover:bg-muted hover:border-primary/50 transition-all duration-300"
+                style={{
+                  transitionDelay: isVisible ? `${index * 50}ms` : "0ms",
+                }}
               >
-                <div className="text-4xl font-bold text-primary mb-2">{stat.number}</div>
-                <div className="text-muted-foreground font-medium text-sm">{stat.label}</div>
+                <p className="text-4xl font-display text-primary mb-2">{item.stat}</p>
+                <p className="text-muted-foreground text-sm">{item.label}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Values Section */}
-        <div className="bg-card border border-border rounded-2xl p-12">
-          <h3 className="text-3xl font-bold text-center mb-12 fade-in">Our Core Values</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, idx) => (
-              <div key={idx} className="fade-in text-center" style={{ animationDelay: `${idx * 0.1}s` }}>
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center">
-                  <div className="w-8 h-8 bg-primary rounded-full"></div>
-                </div>
-                <h4 className="text-lg font-bold text-foreground mb-2">{value.title}</h4>
-                <p className="text-muted-foreground text-sm">{value.description}</p>
+        <div
+          className={`bg-muted/30 rounded-xl p-12 transition-all duration-700 ${
+            isVisible ? "translate-y-0 opacity-100 scale-100" : "translate-y-10 opacity-0 scale-95"
+          }`}
+        >
+          <h3 className="text-2xl font-display text-foreground mb-8 text-center">Our Core Values</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: "Integrity", desc: "We believe in transparency and honest communication with every client." },
+              { title: "Excellence", desc: "Quality is non-negotiable in everything we deliver." },
+              { title: "Innovation", desc: "We stay updated with latest techniques and technologies." },
+            ].map((value, index) => (
+              <div
+                key={index}
+                className="text-center"
+                style={{
+                  transitionDelay: isVisible ? `${index * 100}ms` : "0ms",
+                }}
+              >
+                <h4 className="text-xl font-display text-foreground mb-3">{value.title}</h4>
+                <p className="text-muted-foreground leading-relaxed">{value.desc}</p>
               </div>
             ))}
           </div>

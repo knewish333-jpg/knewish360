@@ -3,46 +3,41 @@
 import { useEffect, useState } from "react"
 
 export default function Preloader() {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsVisible(false)
-    }, 2500)
+      setIsLoading(false)
+    }, 2000)
 
     return () => clearTimeout(timer)
   }, [])
 
-  if (!isVisible) return null
+  if (!isLoading) return null
 
   return (
-    <div className="fixed inset-0 z-[100] bg-background flex items-center justify-center pointer-events-none">
-      <div className="flex flex-col items-center gap-6">
-        <div className="relative">
-          <div className="animate-spin" style={{ animationDuration: "3s" }}>
-            <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Orange segment */}
-              <path d="M 50 50 L 50 15 A 35 35 0 0 1 74.27 25.73 Z" fill="#F59E0B" />
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background">
+      <div className="flex flex-col items-center gap-8">
+        <div className="relative w-24 h-24">
+          <div className="absolute inset-0 rounded-full border-4 border-muted/30"></div>
+          <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-primary border-r-primary animate-spin"></div>
 
-              {/* Dark blue segment (left) */}
-              <path d="M 50 50 L 25.73 74.27 A 35 35 0 0 1 50 15 L 50 50 Z" fill="#001F3F" />
+          <div className="absolute inset-2 rounded-full border-2 border-muted/20"></div>
+          <div
+            className="absolute inset-2 rounded-full border-2 border-transparent border-b-accent animate-spin"
+            style={{ animationDirection: "reverse" }}
+          ></div>
 
-              {/* Dark blue segment (right) */}
-              <path d="M 50 50 L 74.27 25.73 A 35 35 0 0 1 85 85 L 50 50 Z" fill="#1a3a5c" />
-
-              {/* Center circle */}
-              <circle cx="50" cy="50" r="20" fill="white" />
-            </svg>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-3 h-3 bg-gradient-primary rounded-full animate-pulse-soft"></div>
           </div>
         </div>
 
-        <div className="text-center">
-          <p className="text-lg font-semibold text-foreground animate-pulse">Knewish 360</p>
-          <div className="flex items-center justify-center gap-1 mt-3">
-            <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: "0s" }}></div>
-            <div className="w-2 h-2 bg-secondary rounded-full animate-bounce" style={{ animationDelay: "0.15s" }}></div>
-            <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: "0.3s" }}></div>
+        <div className="text-center space-y-2">
+          <div className="text-3xl font-heading font-bold text-foreground tracking-tight">
+            Knewish<span className="text-primary">360</span>
           </div>
+          <p className="text-muted-foreground text-sm font-medium">Premium Solutions</p>
         </div>
       </div>
     </div>

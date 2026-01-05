@@ -1,243 +1,134 @@
 "use client"
 
+import { Zap, Home, Sun, Wrench, BoxIcon, Shield, CheckCircle, ArrowRight } from "lucide-react"
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
+import { useContactModal } from "@/components/contact-modal"
+
 const services = [
   {
-    title: "Office & Home Relocation",
-    description: "Seamless moving and relocation services with professional handling of all your belongings.",
-    color: "from-blue-500 to-blue-600",
-    accent: "bg-blue-500/10",
-    svgContent: (
-      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="10" y="20" width="50" height="50" rx="3" fill="currentColor" opacity="0.3" className="animate-pulse" />
-        <rect
-          x="50"
-          y="15"
-          width="40"
-          height="55"
-          rx="3"
-          fill="currentColor"
-          opacity="0.5"
-          className="animate-bounce"
-          style={{ animationDelay: "0.1s" }}
-        />
-        <path d="M 25 45 L 35 45 M 25 55 L 35 55" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <path
-          d="M 60 35 L 75 35 M 60 50 L 75 50"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          className="animate-pulse"
-        />
-        <circle
-          cx="45"
-          cy="75"
-          r="4"
-          fill="currentColor"
-          className="animate-bounce"
-          style={{ animationDelay: "0.2s" }}
-        />
-      </svg>
-    ),
+    icon: BoxIcon,
+    title: "Office Relocation",
+    description: "Seamless office moving with minimal downtime and professional handling of all equipment.",
+    features: ["Zero Downtime", "Equipment Safety", "Professional Team"],
   },
   {
+    icon: Home,
+    title: "Home Relocation",
+    description: "Complete residential moving services with care for your belongings and peace of mind.",
+    features: ["Careful Handling", "Timely Delivery", "Dedicated Team"],
+  },
+  {
+    icon: Sun,
     title: "Solar Installation",
-    description: "Transform your energy with state-of-the-art solar panel installation for homes and businesses.",
-    color: "from-orange-500 to-orange-600",
-    accent: "bg-orange-500/10",
-    svgContent: (
-      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle
-          cx="50"
-          cy="30"
-          r="12"
-          fill="currentColor"
-          className="animate-spin"
-          style={{ animationDuration: "4s" }}
-        />
-        <line x1="50" y1="50" x2="50" y2="75" stroke="currentColor" strokeWidth="3" />
-        <rect x="35" y="60" width="30" height="20" rx="2" fill="currentColor" opacity="0.5" className="animate-pulse" />
-        <line x1="40" y1="65" x2="40" y2="75" stroke="white" strokeWidth="1.5" opacity="0.7" />
-        <line x1="50" y1="65" x2="50" y2="75" stroke="white" strokeWidth="1.5" opacity="0.7" />
-        <line x1="60" y1="65" x2="60" y2="75" stroke="white" strokeWidth="1.5" opacity="0.7" />
-      </svg>
-    ),
+    description: "Professional solar panel installation for sustainable energy solutions.",
+    features: ["Expert Installation", "Long Warranty", "Energy Efficient"],
   },
   {
-    title: "Home Renovations",
-    description: "Complete renovation services to modernize and enhance your living spaces.",
-    color: "from-amber-500 to-amber-600",
-    accent: "bg-amber-500/10",
-    svgContent: (
-      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 20 80 L 20 30 L 50 15 L 80 30 L 80 80" stroke="currentColor" strokeWidth="2.5" />
-        <rect x="35" y="40" width="15" height="20" fill="currentColor" opacity="0.4" className="animate-pulse" />
-        <rect
-          x="55"
-          y="45"
-          width="12"
-          height="15"
-          fill="currentColor"
-          opacity="0.4"
-          className="animate-pulse"
-          style={{ animationDelay: "0.2s" }}
-        />
-        <path
-          d="M 30 70 L 45 70 M 55 70 L 70 70"
-          stroke="currentColor"
-          strokeWidth="2"
-          className="animate-bounce"
-          style={{ animationDelay: "0.1s" }}
-        />
-      </svg>
-    ),
+    icon: Wrench,
+    title: "Home Renovation",
+    description: "Transform your space with expert renovation services and quality craftsmanship.",
+    features: ["Quality Materials", "Skilled Craftsmen", "Modern Designs"],
   },
   {
+    icon: Zap,
     title: "Electrical Services",
-    description:
-      "Professional electrical installation, repairs, and maintenance for residential and commercial properties.",
-    color: "from-cyan-500 to-cyan-600",
-    accent: "bg-cyan-500/10",
-    svgContent: (
-      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 50 20 L 50 40 L 35 50 L 50 60 L 50 80" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-        <circle cx="50" cy="50" r="8" fill="currentColor" className="animate-pulse" />
-        <circle
-          cx="35"
-          cy="50"
-          r="5"
-          fill="currentColor"
-          opacity="0.5"
-          className="animate-bounce"
-          style={{ animationDelay: "0.2s" }}
-        />
-        <circle
-          cx="65"
-          cy="50"
-          r="5"
-          fill="currentColor"
-          opacity="0.5"
-          className="animate-bounce"
-          style={{ animationDelay: "0.1s" }}
-        />
-      </svg>
-    ),
+    description: "Safe and reliable electrical installation, repair, and maintenance services.",
+    features: ["Safety Certified", "24/7 Support", "Expert Technicians"],
   },
   {
+    icon: Shield,
     title: "AC Repair & Maintenance",
-    description: "Expert air conditioning repair, servicing, and maintenance to keep your space comfortable.",
-    color: "from-purple-500 to-purple-600",
-    accent: "bg-purple-500/10",
-    svgContent: (
-      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="15" y="25" width="70" height="35" rx="3" stroke="currentColor" strokeWidth="2.5" />
-        <line x1="20" y1="35" x2="80" y2="35" stroke="currentColor" strokeWidth="1.5" opacity="0.5" />
-        <circle
-          cx="30"
-          cy="42"
-          r="4"
-          fill="currentColor"
-          className="animate-spin"
-          style={{ animationDuration: "2s" }}
-        />
-        <circle
-          cx="50"
-          cy="42"
-          r="4"
-          fill="currentColor"
-          className="animate-spin"
-          style={{ animationDuration: "2.3s" }}
-        />
-        <circle
-          cx="70"
-          cy="42"
-          r="4"
-          fill="currentColor"
-          className="animate-spin"
-          style={{ animationDuration: "2.1s" }}
-        />
-        <path
-          d="M 25 65 Q 25 75 35 75 T 65 75 T 75 65"
-          stroke="currentColor"
-          strokeWidth="2"
-          className="animate-pulse"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "And More",
-    description: "Comprehensive range of additional services tailored to your specific needs.",
-    color: "from-slate-500 to-slate-600",
-    accent: "bg-slate-500/10",
-    svgContent: (
-      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle
-          cx="50"
-          cy="50"
-          r="35"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          opacity="0.5"
-          className="animate-spin"
-          style={{ animationDuration: "4s" }}
-        />
-        <circle cx="50" cy="50" r="25" fill="currentColor" opacity="0.3" className="animate-pulse" />
-        <path
-          d="M 45 45 L 55 55 M 55 45 L 45 55"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          className="animate-bounce"
-          style={{ animationDelay: "0.1s" }}
-        />
-      </svg>
-    ),
+    description: "Expert cooling system repair, maintenance, and installation for your comfort.",
+    features: ["Quick Service", "Professional Care", "Preventive Maintenance"],
   },
 ]
 
 export default function Services() {
+  const { ref, isVisible } = useIntersectionObserver()
+  const { openModal } = useContactModal()
+
   return (
-    <section id="services-section" className="w-full py-24 bg-gradient-to-b from-background via-background to-muted/15">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 fade-in">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 rounded-full mb-6 border border-primary/20 hover:border-primary/40 transition-colors duration-300">
-            <div className="w-2 h-2 bg-primary rounded-full"></div>
-            <span className="text-sm font-bold text-primary tracking-wide">OUR SERVICES</span>
+    <section
+      ref={ref}
+      id="services"
+      className={`py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 transition-all duration-1000 ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto">
+        <div
+          className={`text-center mb-24 transition-all duration-700 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
+        >
+          <div className="inline-flex items-center gap-3 bg-muted/40 px-4 py-2 rounded-full border border-border mb-6">
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wide">What We Offer</span>
           </div>
-          <h2 className="text-5xl sm:text-6xl font-black mb-6 text-balance">Complete Solutions 360°</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            We provide comprehensive professional services for all your home and business needs. Choose from our full
-            range of expert solutions.
+          <h2 className="text-section-title text-foreground mb-8">Premium Services</h2>
+          <p className="text-lead max-w-3xl mx-auto text-xl">
+            Comprehensive solutions for all your relocation, renovation, and maintenance needs with uncompromising
+            quality
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="group fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="h-full bg-card border border-border rounded-2xl p-8 transition-all duration-400 hover:shadow-2xl hover:border-primary/50 card-hover relative overflow-hidden">
-                <div
-                  className={`absolute inset-0 ${service.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                ></div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => {
+            const IconComponent = service.icon
+            return (
+              <div
+                key={index}
+                className={`group relative bg-card border border-border rounded-2xl p-10 hover:shadow-2xl transition-all duration-500 overflow-hidden ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
+                style={{
+                  transitionDelay: isVisible ? `${index * 100}ms` : "0ms",
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
 
-                <div className="relative z-10 space-y-4">
-                  {/* Animated SVG Icon */}
-                  <div
-                    className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${service.color} text-white transition-all duration-400 group-hover:scale-110 group-hover:shadow-lg shadow-md w-16 h-16 items-center justify-center`}
-                  >
-                    <div className="w-8 h-8 text-white">{service.svgContent}</div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="space-y-3">
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                <div className="relative mb-8">
+                  <div className="w-24 h-24 bg-gradient-primary rounded-2xl flex items-center justify-center group-hover:scale-125 transition-transform duration-500 shadow-xl group-hover:shadow-2xl">
+                    <IconComponent className="w-12 h-12 text-primary-foreground" />
                   </div>
                 </div>
+
+                <div className="relative">
+                  <h3 className="text-2xl font-heading font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed text-base mb-6">{service.description}</p>
+
+                  <div className="space-y-3 mb-6">
+                    {service.features.map((feature, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <CheckCircle size={18} className="text-primary flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground font-medium">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={openModal}
+                    className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-yellow-500 text-primary-foreground py-4 rounded-2xl font-heading font-black text-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 uppercase tracking-wide shadow-lg"
+                  >
+                    Learn More & Book
+                  </button>
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               </div>
-            </div>
-          ))}
+            )
+          })}
+        </div>
+
+        <div className="mt-20 text-center">
+          <a
+            href="/services"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-18 py-7 rounded-3xl hover:shadow-2xl transition-all duration-300 hover:scale-110 font-heading font-black text-2xl uppercase tracking-widest shadow-2xl hover:from-primary/90 hover:to-accent"
+          >
+            Explore All Services
+            <ArrowRight size={28} />
+          </a>
         </div>
       </div>
     </section>

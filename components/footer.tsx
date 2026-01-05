@@ -1,118 +1,139 @@
 "use client"
 
 import Link from "next/link"
-import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter, MessageCircle } from "lucide-react"
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
 
 export default function Footer() {
+  const handleSmoothScroll = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    element?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
-    <footer className="w-full bg-slate-900 text-white border-t border-primary/20">
+    <footer className="bg-secondary text-secondary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* Company Info */}
-          <div className="fade-in">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">K</span>
+        {/* Main Footer Content */}
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
+          {/* Brand */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-lg">K</span>
               </div>
-              <span className="font-bold text-xl">Knewish 360</span>
-            </Link>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Your trusted partner for complete home and business solutions. Professional services spanning relocation,
-              solar installation, renovations, electrical work, and AC maintenance.
-            </p>
-            <div className="flex gap-4">
-              {[
-                { icon: Facebook, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Twitter, href: "#" },
-                { icon: MessageCircle, href: "https://wa.me/923000000000" },
-              ].map((social, idx) => {
-                const Icon = social.icon
-                return (
-                  <a
-                    key={idx}
-                    href={social.href}
-                    target={social.icon === MessageCircle ? "_blank" : undefined}
-                    rel={social.icon === MessageCircle ? "noopener noreferrer" : undefined}
-                    className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                  >
-                    <Icon size={18} />
-                  </a>
-                )
-              })}
+              <span className="font-bold text-lg">Knewish360</span>
             </div>
+            <p className="text-secondary-foreground/80 leading-relaxed">
+              Transforming spaces with professional relocation, renovation, and maintenance solutions.
+            </p>
           </div>
 
           {/* Services */}
-          <div className="fade-in" style={{ animationDelay: "0.1s" }}>
-            <h3 className="font-bold text-lg mb-6">Services</h3>
-            <ul className="space-y-3">
-              {["Relocation", "Solar Installation", "Renovations", "Electrical", "AC Services"].map((item, idx) => (
-                <li key={idx}>
-                  <a href="/services" className="text-gray-400 hover:text-primary transition-colors duration-200">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Navigation */}
-          <div className="fade-in" style={{ animationDelay: "0.2s" }}>
-            <h3 className="font-bold text-lg mb-6">Navigation</h3>
+          <div>
+            <h4 className="font-display font-bold mb-6">Services</h4>
             <ul className="space-y-3">
               {[
-                { name: "Services", href: "/services" },
-                { name: "Home", href: "/" },
-              ].map((item, idx) => (
-                <li key={idx}>
-                  <a href={item.href} className="text-gray-400 hover:text-primary transition-colors duration-200">
-                    {item.name}
-                  </a>
+                "Office Relocation",
+                "Home Relocation",
+                "Solar Installation",
+                "Home Renovation",
+                "Electrical Services",
+                "AC Repair",
+              ].map((service, index) => (
+                <li key={index}>
+                  <button
+                    onClick={() => handleSmoothScroll("services")}
+                    className="text-secondary-foreground/80 hover:text-primary transition-colors duration-300"
+                  >
+                    {service}
+                  </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
-          <div className="fade-in" style={{ animationDelay: "0.3s" }}>
-            <h3 className="font-bold text-lg mb-6">Contact</h3>
-            <div className="space-y-4">
-              <a
-                href="tel:+1234567890"
-                className="flex items-center gap-3 text-gray-400 hover:text-primary transition-colors duration-200"
-              >
-                <Phone size={18} className="text-primary" />
-                <span>+1 (234) 567-890</span>
-              </a>
-              <a
-                href="mailto:info@knewish360.com"
-                className="flex items-center gap-3 text-gray-400 hover:text-primary transition-colors duration-200"
-              >
-                <Mail size={18} className="text-primary" />
-                <span>info@knewish360.com</span>
-              </a>
-              <a
-                href="https://wa.me/923000000000"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-400 hover:text-primary transition-colors duration-200"
-              >
-                <MessageCircle size={18} className="text-primary" />
-                <span>WhatsApp</span>
-              </a>
-              <div className="flex items-start gap-3 text-gray-400">
-                <MapPin size={18} className="text-primary mt-1 flex-shrink-0" />
-                <span>Karachi, Pakistan</span>
+          {/* Company */}
+          <div>
+            <h4 className="font-display font-bold mb-6">Quick Links</h4>
+            <ul className="space-y-3">
+              {[
+                { label: "About Us", id: "about" },
+                { label: "Portfolio", id: "portfolio" },
+                { label: "Testimonials", id: "testimonials" },
+                { label: "FAQs", id: "faq" },
+                { label: "Contact", id: "contact" },
+              ].map((item, index) => (
+                <li key={index}>
+                  <button
+                    onClick={() => handleSmoothScroll(item.id)}
+                    className="text-secondary-foreground/80 hover:text-primary transition-colors duration-300"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="font-display font-bold mb-6">Contact Us</h4>
+            <div className="space-y-3">
+              <div>
+                <p className="text-secondary-foreground/80 text-sm">WhatsApp</p>
+                <a
+                  href="https://wa.me/923004627820"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 font-medium transition-colors duration-300"
+                >
+                  +92 300 462 7820
+                </a>
+              </div>
+              <div>
+                <p className="text-secondary-foreground/80 text-sm">Phone</p>
+                <a
+                  href="tel:+923004627820"
+                  className="text-primary hover:text-primary/80 font-medium transition-colors duration-300"
+                >
+                  +92 300 462 7820
+                </a>
+              </div>
+              <div>
+                <p className="text-secondary-foreground/80 text-sm">Location</p>
+                <p className="text-primary font-medium">Islamabad, Pakistan</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-400 text-sm">© 2025 Knewish 360. All rights reserved.</p>
+        <div className="border-t border-secondary-foreground/20 py-8">
+          {/* Social Links */}
+          <div className="flex items-center justify-between flex-col sm:flex-row gap-6">
+            <p className="text-secondary-foreground/80">© 2025 Knewish360. All rights reserved.</p>
+
+            <div className="flex gap-4">
+              {[
+                { icon: Facebook, href: "#" },
+                { icon: Twitter, href: "#" },
+                { icon: Instagram, href: "#" },
+                { icon: Linkedin, href: "#" },
+              ].map((social, index) => {
+                const IconComponent = social.icon
+                return (
+                  <Link
+                    key={index}
+                    href={social.href}
+                    className="w-10 h-10 bg-primary/10 hover:bg-primary rounded-lg flex items-center justify-center transition-all duration-300 group hover:scale-110"
+                  >
+                    <IconComponent
+                      size={18}
+                      className="text-primary group-hover:text-white transition-colors duration-300"
+                    />
+                  </Link>
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
