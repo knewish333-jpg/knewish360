@@ -53,7 +53,7 @@ export default function Contact() {
               icon: MapPin,
               title: "Visit Us",
               desc: "Come visit our office and meet our team in person.",
-              location: "Islamabad, Pakistan",
+              location: "Karachi, Pakistan",
             },
           ].map((card, index) => {
             const IconComponent = card.icon;

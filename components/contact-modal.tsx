@@ -68,7 +68,7 @@ function ContactModal({ isOpen, onClose }: ContactModalProps) {
     {
       icon: MapPin,
       title: "Location",
-      value: "Islamabad, Pakistan",
+      value: "Karachi, Pakistan",
       color: "bg-orange-500",
     },
   ];

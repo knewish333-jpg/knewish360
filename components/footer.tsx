@@ -101,7 +101,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-secondary-foreground/80 text-sm">Location</p>
-                <p className="text-primary font-medium">Islamabad, Pakistan</p>
+                <p className="text-primary font-medium">Karachi, Pakistan</p>
               </div>
             </div>
           </div>
