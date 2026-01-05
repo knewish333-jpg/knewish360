@@ -16,7 +16,7 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-background/90 backdrop-blur-xl z-50 border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-5">
+        <div className="flex justify-between items-center py-2">
           <a
             href="/"
             className="flex items-center gap-3 animate-fade-in hover:opacity-80 transition-opacity"
@@ -24,7 +24,7 @@ export default function Navigation() {
             <img
               src="/logo.png"
               alt="Knewish360 Logo"
-              className="h-12 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </a>
 
