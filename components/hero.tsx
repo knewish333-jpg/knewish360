@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { MessageCircle, ArrowRight } from "lucide-react"
-import { useContactModal } from "@/components/contact-modal"
+import Image from "next/image";
+import { MessageCircle, ArrowRight } from "lucide-react";
+import { useContactModal } from "@/components/contact-modal";
 
 export default function Hero() {
-  const { openModal } = useContactModal()
+  const { openModal } = useContactModal();
 
   return (
     <section className="pt-40 pb-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-background to-muted/20 relative overflow-hidden">
@@ -25,13 +25,16 @@ export default function Hero() {
 
               <h1 className="text-hero text-foreground leading-tight">
                 Transform Your{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent font-black">Space</span>
+                <span className="bg-gradient-primary bg-clip-text text-green-400 font-black">
+                  Space
+                </span>
               </h1>
 
               <p className="text-lg leading-relaxed text-muted-foreground font-medium max-w-lg">
-                From home making to shifting, <span className="font-bold text-foreground">Knewish360</span> stays with
-                the client every step. Complete relocation, renovation, and maintenance solutions crafted with
-                excellence.
+                From home making to shifting,{" "}
+                <span className="font-bold text-foreground">Knewish360</span>{" "}
+                stays with the client every step. Complete relocation,
+                renovation, and maintenance solutions crafted with excellence.
               </p>
             </div>
 
@@ -40,7 +43,10 @@ export default function Hero() {
                 onClick={openModal}
                 className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-16 py-8 rounded-3xl font-heading font-black text-xl uppercase tracking-widest shadow-2xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:from-primary/90 to-primary/70 group"
               >
-                <MessageCircle size={32} className="group-hover:scale-125 transition-transform" />
+                <MessageCircle
+                  size={32}
+                  className="group-hover:scale-125 transition-transform"
+                />
                 Book Free Consultation
               </button>
               <a
@@ -87,5 +93,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
