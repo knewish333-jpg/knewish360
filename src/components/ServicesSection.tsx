@@ -12,7 +12,7 @@ const services = [
   },
   {
     icon: Sun,
-    title: "Solar Installation",
+    title: "Solar Panels Cleaning Services",
     description:
       "Expert solar panel installation and maintenance to reduce your electricity bills.",
     features: ["Site Assessment", "Panel Installation", "Grid Connection"],
@@ -55,7 +55,10 @@ const ServicesSection = ({ onGetQuote }: ServicesSectionProps) => {
   const navigate = useNavigate();
 
   return (
-    <section id="services" className="py-16 md:py-24 bg-background relative overflow-hidden">
+    <section
+      id="services"
+      className="py-16 md:py-24 bg-background relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(174_72%_45%/0.05),transparent_50%)]" />
 

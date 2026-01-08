@@ -22,7 +22,7 @@ const Footer = ({ onGetQuote }: FooterProps) => {
 
   const services = [
     "Relocation Services",
-    "Solar Installation",
+    "Solar Panels Cleaning Services",
     "Home Renovations",
     "Electrical Services",
     "AC Repair",

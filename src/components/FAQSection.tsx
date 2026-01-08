@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "What is your warranty policy?",
     answer:
-      "We stand behind our work with comprehensive warranties. Solar installations come with a 25-year panel warranty and 10-year workmanship guarantee. Electrical and renovation work includes a 2-year warranty. Specific terms may vary by service.",
+      "We stand behind our work with comprehensive warranties. Solar Panels Cleaning Servicess come with a 25-year panel warranty and 10-year workmanship guarantee. Electrical and renovation work includes a 2-year warranty. Specific terms may vary by service.",
   },
   {
     question: "Do you offer emergency services?",
@@ -32,9 +32,9 @@ const faqs = [
       "Yes! We offer 24/7 emergency services for electrical issues and AC repairs. Our emergency response team is available around the clock to handle urgent situations. Standard rates apply during business hours, with a small premium for after-hours calls.",
   },
   {
-    question: "How long does a typical solar installation take?",
+    question: "How long does a typical Solar Panels Cleaning Services take?",
     answer:
-      "A residential solar installation typically takes 1-3 days after permits are approved. The entire process from consultation to power-on usually takes 4-8 weeks, depending on permit processing times in your area and system complexity.",
+      "A residential Solar Panels Cleaning Services typically takes 1-3 days after permits are approved. The entire process from consultation to power-on usually takes 4-8 weeks, depending on permit processing times in your area and system complexity.",
   },
 ];
 

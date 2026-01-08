@@ -27,7 +27,10 @@ const checkpoints = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-16 md:py-24 bg-card relative overflow-hidden">
+    <section
+      id="about"
+      className="py-16 md:py-24 bg-card relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent" />
       <div className="absolute bottom-0 left-0 w-48 md:w-96 h-48 md:h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
@@ -44,10 +47,11 @@ const AboutSection = () => {
               <span className="text-primary"> Complete Solutions</span>
             </h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6 md:mb-8">
-              At Knewish360, we believe in providing comprehensive services that cover
-              every aspect of your home and office needs. From seamless relocations to
-              energy-efficient solar installations, from stunning renovations to
-              reliable electrical services — we've got you covered.
+              At Knewish360, we believe in providing comprehensive services that
+              cover every aspect of your home and office needs. From seamless
+              relocations to energy-efficient Solar Panels Cleaning Servicess,
+              from stunning renovations to reliable electrical services — we've
+              got you covered.
             </p>
 
             {/* Checkpoints */}
@@ -57,7 +61,10 @@ const AboutSection = () => {
                   key={index}
                   className="flex items-center gap-3 text-foreground justify-center sm:justify-start"
                 >
-                  <CheckCircle2 className="text-primary flex-shrink-0" size={18} />
+                  <CheckCircle2
+                    className="text-primary flex-shrink-0"
+                    size={18}
+                  />
                   <span className="text-sm">{point}</span>
                 </div>
               ))}
@@ -66,18 +73,30 @@ const AboutSection = () => {
             {/* Stats Bar */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-8 p-4 md:p-6 bg-secondary/50 rounded-lg border border-border">
               <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-primary">10+</div>
-                <div className="text-xs text-muted-foreground">Years Experience</div>
+                <div className="text-xl md:text-2xl font-bold text-primary">
+                  10+
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  Years Experience
+                </div>
               </div>
               <div className="w-px bg-border hidden sm:block" />
               <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-primary">1000+</div>
-                <div className="text-xs text-muted-foreground">Happy Clients</div>
+                <div className="text-xl md:text-2xl font-bold text-primary">
+                  1000+
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  Happy Clients
+                </div>
               </div>
               <div className="w-px bg-border hidden sm:block" />
               <div className="text-center">
-                <div className="text-xl md:text-2xl font-bold text-primary">50+</div>
-                <div className="text-xs text-muted-foreground">Team Members</div>
+                <div className="text-xl md:text-2xl font-bold text-primary">
+                  50+
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  Team Members
+                </div>
               </div>
             </div>
           </div>
@@ -97,7 +116,9 @@ const AboutSection = () => {
                     <h3 className="text-lg md:text-xl font-semibold text-foreground mb-1 md:mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm md:text-base">{feature.description}</p>
+                    <p className="text-muted-foreground text-sm md:text-base">
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
               </div>
