@@ -8,7 +8,7 @@ interface FooterProps {
 
 const Footer = ({ onGetQuote }: FooterProps) => {
   const navigate = useNavigate();
-  
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -58,18 +58,18 @@ const Footer = ({ onGetQuote }: FooterProps) => {
               Your trusted partner for comprehensive home and office solutions
               in Karachi, Pakistan.
             </p>
-            
+
             {/* Contact Quick Links */}
             <div className="flex flex-col gap-2">
-              <a 
-                href="tel:+923211234567" 
+              <a
+                href="tel:+923211234567"
                 className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors justify-center md:justify-start"
               >
                 <Phone size={14} />
-                +92 321 1234567
+                +0326-2020407
               </a>
-              <a 
-                href="mailto:hello@knewish360.com" 
+              <a
+                href="mailto:hello@knewish360.com"
                 className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors justify-center md:justify-start"
               >
                 <Mail size={14} />
@@ -80,7 +80,9 @@ const Footer = ({ onGetQuote }: FooterProps) => {
 
           {/* Quick Links */}
           <div className="text-center md:text-left">
-            <h4 className="text-foreground font-semibold mb-4 md:mb-6 text-sm md:text-base">Quick Links</h4>
+            <h4 className="text-foreground font-semibold mb-4 md:mb-6 text-sm md:text-base">
+              Quick Links
+            </h4>
             <ul className="space-y-2 md:space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -117,7 +119,9 @@ const Footer = ({ onGetQuote }: FooterProps) => {
 
           {/* Services */}
           <div className="text-center md:text-left">
-            <h4 className="text-foreground font-semibold mb-4 md:mb-6 text-sm md:text-base">Services</h4>
+            <h4 className="text-foreground font-semibold mb-4 md:mb-6 text-sm md:text-base">
+              Services
+            </h4>
             <ul className="space-y-2 md:space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
@@ -134,13 +138,15 @@ const Footer = ({ onGetQuote }: FooterProps) => {
 
           {/* Contact */}
           <div className="col-span-2 md:col-span-1 text-center md:text-left">
-            <h4 className="text-foreground font-semibold mb-4 md:mb-6 text-sm md:text-base">Contact Info</h4>
+            <h4 className="text-foreground font-semibold mb-4 md:mb-6 text-sm md:text-base">
+              Contact Info
+            </h4>
             <ul className="space-y-2 md:space-y-3 text-xs md:text-sm">
               <li className="text-muted-foreground">
                 <span className="text-foreground block">Location:</span>
-                <a 
-                  href="https://maps.google.com/?q=Karachi,Pakistan" 
-                  target="_blank" 
+                <a
+                  href="https://maps.google.com/?q=Karachi,Pakistan"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors inline-flex items-center gap-1"
                 >
@@ -150,25 +156,31 @@ const Footer = ({ onGetQuote }: FooterProps) => {
               </li>
               <li className="text-muted-foreground">
                 <span className="text-foreground block">Email:</span>
-                <a href="mailto:hello@knewish360.com" className="hover:text-primary transition-colors">
+                <a
+                  href="mailto:hello@knewish360.com"
+                  className="hover:text-primary transition-colors"
+                >
                   hello@knewish360.com
                 </a>
               </li>
               <li className="text-muted-foreground">
                 <span className="text-foreground block">Phone:</span>
-                <a href="tel:+923211234567" className="hover:text-primary transition-colors">
-                  +92 321 1234567
+                <a
+                  href="tel:+923211234567"
+                  className="hover:text-primary transition-colors"
+                >
+                  +0326-2020407
                 </a>
               </li>
               <li className="text-muted-foreground">
                 <span className="text-foreground block">WhatsApp:</span>
-                <a 
-                  href="https://wa.me/923211234567" 
-                  target="_blank" 
+                <a
+                  href="https://wa.me/923211234567"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
                 >
-                  +92 321 1234567
+                  +0326-2020407
                 </a>
               </li>
               <li className="text-muted-foreground">
@@ -182,7 +194,8 @@ const Footer = ({ onGetQuote }: FooterProps) => {
         {/* Bottom Bar */}
         <div className="pt-6 md:pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
           <p className="text-muted-foreground text-xs md:text-sm text-center md:text-left">
-            © {new Date().getFullYear()} Knewish360. All rights reserved. | Karachi, Pakistan
+            © {new Date().getFullYear()} Knewish360. All rights reserved. |
+            Karachi, Pakistan
           </p>
           <button
             onClick={onGetQuote}

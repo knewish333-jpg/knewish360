@@ -1,5 +1,17 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Phone, Mail, MapPin, Clock, MessageCircle, ExternalLink } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  MessageCircle,
+  ExternalLink,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface QuoteModalProps {
@@ -13,14 +25,14 @@ const contactDetails = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+92 321 1234567",
-    action: "tel:+923211234567",
+    value: "+92 332 8283539",
+    action: "tel:+923328283539",
     actionLabel: "Call",
   },
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+92 321 1234567",
+    value: "+0326-2020407",
     action: "https://wa.me/923211234567",
     actionLabel: "Chat",
   },
@@ -70,7 +82,10 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
           className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-5 md:py-6 text-base md:text-lg mt-4 group"
         >
           Fill Quote Form
-          <ExternalLink className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+          <ExternalLink
+            className="ml-2 group-hover:translate-x-1 transition-transform"
+            size={18}
+          />
         </Button>
 
         <div className="relative my-4">
@@ -78,7 +93,9 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
             <div className="w-full border-t border-border"></div>
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-card px-2 text-muted-foreground">or contact directly</span>
+            <span className="bg-card px-2 text-muted-foreground">
+              or contact directly
+            </span>
           </div>
         </div>
 
@@ -93,15 +110,25 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
                   <contact.icon className="text-primary" size={18} />
                 </div>
                 <div>
-                  <div className="text-[10px] md:text-xs text-muted-foreground">{contact.label}</div>
-                  <div className="text-foreground font-medium text-xs md:text-sm">{contact.value}</div>
+                  <div className="text-[10px] md:text-xs text-muted-foreground">
+                    {contact.label}
+                  </div>
+                  <div className="text-foreground font-medium text-xs md:text-sm">
+                    {contact.value}
+                  </div>
                 </div>
               </div>
               {contact.action && (
                 <a
                   href={contact.action}
-                  target={contact.action.startsWith("http") ? "_blank" : undefined}
-                  rel={contact.action.startsWith("http") ? "noopener noreferrer" : undefined}
+                  target={
+                    contact.action.startsWith("http") ? "_blank" : undefined
+                  }
+                  rel={
+                    contact.action.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                 >
                   <Button
                     size="sm"
@@ -118,8 +145,12 @@ const QuoteModal = ({ isOpen, onClose }: QuoteModalProps) => {
 
         <div className="mt-4 p-3 md:p-4 bg-primary/10 rounded-lg border border-primary/20 text-center">
           <p className="text-xs md:text-sm text-foreground">
-            <span className="font-semibold text-primary">Free Consultation!</span>
-            <span className="text-muted-foreground ml-1">No obligation quote</span>
+            <span className="font-semibold text-primary">
+              Free Consultation!
+            </span>
+            <span className="text-muted-foreground ml-1">
+              No obligation quote
+            </span>
           </p>
         </div>
       </DialogContent>
