@@ -12,14 +12,14 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+0326-2020407",
-    href: "tel:+923211234567",
+    value: "+92 326-2020407",
+    href: "tel:+9232632020407",
   },
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+0326-2020407",
-    href: "https://wa.me/923211234567",
+    value: "+92 326-2020407",
+    href: "https://wa.me/9232632020407",
   },
   {
     icon: Mail,

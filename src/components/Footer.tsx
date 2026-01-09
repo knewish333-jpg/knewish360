@@ -66,7 +66,7 @@ const Footer = ({ onGetQuote }: FooterProps) => {
                 className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors justify-center md:justify-start"
               >
                 <Phone size={14} />
-                +0326-2020407
+                +92 326-2020407
               </a>
               <a
                 href="mailto:hello@knewish360.com"
@@ -169,7 +169,7 @@ const Footer = ({ onGetQuote }: FooterProps) => {
                   href="tel:+923211234567"
                   className="hover:text-primary transition-colors"
                 >
-                  +0326-2020407
+                  +92 326-2020407
                 </a>
               </li>
               <li className="text-muted-foreground">
@@ -180,7 +180,7 @@ const Footer = ({ onGetQuote }: FooterProps) => {
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
                 >
-                  +0326-2020407
+                  +92 326-2020407
                 </a>
               </li>
               <li className="text-muted-foreground">

@@ -32,7 +32,7 @@ const contactDetails = [
   {
     icon: MessageCircle,
     label: "WhatsApp",
-    value: "+0326-2020407",
+    value: "+92 326-2020407",
     action: "https://wa.me/923211234567",
     actionLabel: "Chat",
   },

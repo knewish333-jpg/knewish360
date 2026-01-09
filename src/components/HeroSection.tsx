@@ -41,7 +41,7 @@ const HeroSection = ({ onGetQuote }: HeroSectionProps) => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center lg:text-left lg:mx-0">
           {/* Badge */}
-          <div
+          {/* <div
             className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-primary/10 border border-primary/20 text-primary mb-6 md:mb-8 opacity-0 animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
@@ -49,7 +49,7 @@ const HeroSection = ({ onGetQuote }: HeroSectionProps) => {
             <span className="text-xs md:text-sm font-medium">
               Your 360° Solution Partner in Karachi
             </span>
-          </div>
+          </div> */}
 
           {/* Main Heading */}
           <h1
