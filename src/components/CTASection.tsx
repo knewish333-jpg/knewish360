@@ -24,8 +24,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@knewish360.com",
-    href: "mailto:hello@knewish360.com",
+    value: "info@knewish360.com",
+    href: "mailto:info@knewish360.com",
   },
   {
     icon: MapPin,

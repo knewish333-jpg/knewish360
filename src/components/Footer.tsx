@@ -69,11 +69,11 @@ const Footer = ({ onGetQuote }: FooterProps) => {
                 +92 326-2020407
               </a>
               <a
-                href="mailto:hello@knewish360.com"
+                href="mailto:info@knewish360.com"
                 className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors justify-center md:justify-start"
               >
                 <Mail size={14} />
-                hello@knewish360.com
+                info@knewish360.com
               </a>
             </div>
           </div>
@@ -157,10 +157,10 @@ const Footer = ({ onGetQuote }: FooterProps) => {
               <li className="text-muted-foreground">
                 <span className="text-foreground block">Email:</span>
                 <a
-                  href="mailto:hello@knewish360.com"
+                  href="mailto:info@knewish360.com"
                   className="hover:text-primary transition-colors"
                 >
-                  hello@knewish360.com
+                  info@knewish360.com
                 </a>
               </li>
               <li className="text-muted-foreground">

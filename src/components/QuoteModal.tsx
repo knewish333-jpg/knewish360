@@ -39,8 +39,8 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@knewish360.com",
-    action: "mailto:hello@knewish360.com",
+    value: "info@knewish360.com",
+    action: "mailto:info@knewish360.com",
     actionLabel: "Email",
   },
   {
