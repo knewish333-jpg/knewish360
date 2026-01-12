@@ -9,7 +9,7 @@ const faqs = [
   {
     question: "What areas do you provide services in?",
     answer:
-      "We currently serve all areas of Karachi, Pakistan. Our team is equipped to handle projects of all sizes, from local moves to city-wide installations. Contact us to confirm service availability in your specific location.",
+      "We currently serve all areas of Karachi, Pakistan. Our team is equipped to handle projects of all sizes, from local moves to city-wide . Contact us to confirm service availability in your specific location.",
   },
   {
     question: "How do I get a quote for my project?",
@@ -40,7 +40,10 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section id="faqs" className="py-16 md:py-24 bg-card relative overflow-hidden">
+    <section
+      id="faqs"
+      className="py-16 md:py-24 bg-card relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="absolute bottom-0 right-0 w-48 md:w-96 h-48 md:h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
@@ -57,8 +60,9 @@ const FAQSection = () => {
               <span className="text-primary"> Questions</span>
             </h2>
             <p className="text-muted-foreground text-base md:text-lg mb-6 md:mb-8">
-              Find answers to common questions about our services, processes, and
-              policies. Can't find what you're looking for? Feel free to reach out!
+              Find answers to common questions about our services, processes,
+              and policies. Can't find what you're looking for? Feel free to
+              reach out!
             </p>
 
             <div className="p-4 md:p-6 bg-background rounded-lg border border-border text-left">
@@ -66,14 +70,16 @@ const FAQSection = () => {
                 Still have questions?
               </h3>
               <p className="text-muted-foreground text-sm mb-4">
-                Our team is here to help. Contact us and we'll get back to you within
-                24 hours.
+                Our team is here to help. Contact us and we'll get back to you
+                within 24 hours.
               </p>
               <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                  document
+                    .querySelector("#contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="text-primary font-medium text-sm hover:underline"
               >
@@ -84,7 +90,11 @@ const FAQSection = () => {
 
           {/* Right Side - Accordion */}
           <div>
-            <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
+            <Accordion
+              type="single"
+              collapsible
+              className="space-y-3 md:space-y-4"
+            >
               {faqs.map((faq, index) => (
                 <AccordionItem
                   key={index}

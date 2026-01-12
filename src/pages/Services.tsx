@@ -33,12 +33,12 @@ const allServices = [
   },
   {
     icon: Sun,
-    title: "Solar Panel Installation",
+    title: "Solar Panel Cleaning Services",
     description:
       "Harness the power of the sun with our expert solar panel cleaning and maintenance services. Reduce your electricity bills and carbon footprint.",
     features: [
       "Site Assessment",
-      "Panel Installation",
+      "Panel Cleaning",
       "Grid Connection",
       "Maintenance Plans",
       "Net Metering Setup",
