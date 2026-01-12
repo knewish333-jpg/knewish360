@@ -15,7 +15,7 @@ const services = [
     title: "Solar Panels Cleaning Services",
     description:
       "Expert solar panel cleaning to maximize efficiency and energy output.",
-    features: ["Site Assessment", "Panel Installation", "Grid Connection"],
+    features: ["Site Assessment", "Panel Cleaning", "Grid Connection"],
   },
   {
     icon: Home,
