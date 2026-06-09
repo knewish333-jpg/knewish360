@@ -1,4 +1,4 @@
-import logoImage from "";
+import logoImage from "@vasset/logo.tsx";
 
 interface LogoProps {
   className?: string;
